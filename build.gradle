@@ -7,7 +7,7 @@ uploadArchives {
 		repository (url: "file:///home/hariram/Personal/github/maven-repo-snapshot")
 		pom.version = '0.1'
 		pom.artifactId = 'annotation'
-		pom.groupId = 'com.hariram.annotation'
+		pom.groupId = 'com.hariram'
 	}
 }
 
