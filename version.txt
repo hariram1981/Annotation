@@ -1,3 +1,5 @@
 0.1 - Initial version
     - added annotation processor interface
     - added annotation util for utility functions
+0.2 - Added log4j logging
+    - added test case for AnnotationUtil

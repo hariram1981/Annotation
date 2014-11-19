@@ -3,6 +3,8 @@ package com.hariram.annotation.util;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import org.apache.log4j.Logger;
+
 /**
  * Utility class for annotation functionalities
  * 
@@ -10,6 +12,8 @@ import java.lang.reflect.Method;
  * date 14-Nov-2014
  */
 public final class AnnotationUtil {
+	
+	public static final Logger LOGGER = Logger.getLogger(AnnotationUtil.class);
 	/**
 	 * Utility class and hence private constructor
 	 */
@@ -25,14 +29,16 @@ public final class AnnotationUtil {
 	 * @return Object (can be null or any value returned by the method to be invoked)
 	 */
 	public static Object callMethod(Object obj, String methodName, Object[] methodArgs) {
+		LOGGER.info("AnnotationUtil.allMethod, obj: " + obj +", methodName: " + methodName + ", methodArgs: " + methodArgs);
 		Object returnObj = null;
 		try {
 			Method method = obj.getClass().getMethod(methodName, null);
 			returnObj = method.invoke(obj, methodArgs);
 		} catch (IllegalAccessException | IllegalArgumentException
 				| InvocationTargetException | NoSuchMethodException | SecurityException e) {
-			e.printStackTrace();
+			LOGGER.error("AnnotationUtil.callMethod, exception: " + e.getClass() + " " + e.getMessage());
 		}
+		LOGGER.info("AnnotationUtil.callMethod, returnObj: " + returnObj);
 		return returnObj;
 	}
 }
