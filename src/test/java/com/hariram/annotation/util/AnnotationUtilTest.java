@@ -14,10 +14,21 @@ import org.junit.Test;
 public class AnnotationUtilTest {
 
 	@Test
-	public void test() {
-		//Object obj = AnnotationUtil.callMethod(new TestClass(), "getValue", new Object[]{new String("input")});
-		Object obj = AnnotationUtil.callMethod(new TestClass(), "getValue", null);
-		assertTrue(obj instanceof String && ((String)obj).equals("--returned"));
+	public void testNoParam() {
+		Object obj = AnnotationUtil.callMethod(new TestClass(), "getValueNoParam", null);
+		assertTrue(obj instanceof Integer && ((Integer)obj == 1));
 	}
 
+	@Test
+	public void testOneParam() {
+		Object obj = AnnotationUtil.callMethod(new TestClass(), "getValueOneParam", new Object[]{new String("input")});
+		assertTrue(obj instanceof String && ((String)obj).contains("--returned"));
+	}
+
+
+	@Test
+	public void testMultiParam() {
+		Object obj = AnnotationUtil.callMethod(new TestClass(), "getValueMultiParam", new Object[]{new String("input"), new Integer(1)});
+		assertTrue(obj instanceof String && ((String)obj).contains("--returned"));
+	}
 }

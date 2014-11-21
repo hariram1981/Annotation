@@ -2,6 +2,9 @@ package com.hariram.annotation.util;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -32,7 +35,20 @@ public final class AnnotationUtil {
 		LOGGER.info("AnnotationUtil.allMethod, obj: " + obj +", methodName: " + methodName + ", methodArgs: " + methodArgs);
 		Object returnObj = null;
 		try {
-			Method method = obj.getClass().getMethod(methodName, null);
+			Method method;
+			if(methodArgs == null) {
+				method = obj.getClass().getMethod(methodName);
+			} else {
+				List<Class<? extends Object>> methodArgsClassList = new ArrayList<Class<? extends Object>>();
+				
+				Arrays.asList(methodArgs)
+					.stream()
+					.forEach(e-> {
+						methodArgsClassList.add(e.getClass());
+					});
+				
+				method = obj.getClass().getMethod(methodName, methodArgsClassList.toArray(new Class[0]));
+			}
 			returnObj = method.invoke(obj, methodArgs);
 		} catch (IllegalAccessException | IllegalArgumentException
 				| InvocationTargetException | NoSuchMethodException | SecurityException e) {
