@@ -17,4 +17,12 @@ public interface AnnotationProcessor {
 	 * @return Object (can be null or any value returned by call back method)
 	 */
 	public Object process(Object obj, String callbackMethodName, Object[] callbackMethodArgs);
+	
+	/**
+	 * Processes the annotations for the particular object passed
+	 * 
+	 * @param obj object that is annotated
+	 * @return Object (can be null or any value returned by call back method)
+	 */
+	public Object process(Object obj);
 }
