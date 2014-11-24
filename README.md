@@ -6,7 +6,8 @@ Base annotation project
 
 Interfaces
 ----------
-###1. com.hariram.annotation.AnnotationProcessor - this is the interface that will be implemented by other processors. It has one method process which is called for processing the annotation. The signature of the process method is as below:
+###1. com.hariram.annotation.AnnotationProcessor 
+ - this is the interface that will be implemented by other processors. It has one method process which is called for processing the annotation. The signature of the process method is as below:
   
 Object process(Object obj, String callbackMethodName, Object[] callbackMethodArgs)
  - processes the annotation in the particular object and after processing, calls the callbackmethod with the provided arguments (useful in order to not just process the annotation but call a method of the object after processing).
