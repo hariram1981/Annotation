@@ -7,6 +7,10 @@ package com.hariram.annotation;
  * date 14-Nov-2014
  */
 public interface AnnotationProcessor {
+	
+    // type of annotations
+	public enum AnnotationType {DBAnnotation, PropertyAnnotation};
+	
 	/**
 	 * Processes the annotations for the particular object passed
 	 * and invokes the call back method
@@ -16,7 +20,7 @@ public interface AnnotationProcessor {
 	 * @param callbackMethodArgs call back method argument
 	 * @return Object (can be null or any value returned by call back method)
 	 */
-	public Object process(Object obj, String callbackMethodName, Object[] callbackMethodArgs);
+	public Object process(Object obj, String callbackMethodName, Object[] callbackMethodArgs) throws AnnotationException;
 	
 	/**
 	 * Processes the annotations for the particular object passed
@@ -24,5 +28,5 @@ public interface AnnotationProcessor {
 	 * @param obj object that is annotated
 	 * @return Object (can be null or any value returned by call back method)
 	 */
-	public Object process(Object obj);
+	public Object process(Object obj) throws AnnotationException;
 }
