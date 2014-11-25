@@ -6,3 +6,4 @@
 0.3 - Added support for reflection call of methods with no param and multi param
 0.4 - Added overloaded method without callback
 0.5 - Added annotation type and annotation exception to handle exceptions
+0.6 - Adding support to take generics for collections
