@@ -5,8 +5,12 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 
@@ -24,6 +28,10 @@ public final class AnnotationUtil {
 	private static Map<Class<? extends Object>, Class<? extends Object>> classMap = new HashMap<Class<? extends Object>, Class<? extends Object>>();
 	static {
 		classMap.put(ArrayList.class, List.class);
+		classMap.put(HashSet.class, Set.class);
+		classMap.put(TreeSet.class, Set.class);
+		classMap.put(HashMap.class, Map.class);
+		classMap.put(TreeMap.class, Map.class);
 	}
 	
 	public static final Logger LOGGER = Logger.getLogger(AnnotationUtil.class);
