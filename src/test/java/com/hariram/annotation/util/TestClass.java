@@ -1,4 +1,8 @@
 package com.hariram.annotation.util;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Test class
  * 
@@ -33,6 +37,26 @@ public class TestClass {
 	 */
 	public String getValueMultiParam(String value, Integer n) {
 		return value + "--returned--" + n;
+	}
+	
+	/**
+	 * Get value with arraylist
+	 * 
+	 * @param list list of string
+	 * @return String return with appended list
+	 *//*
+	public String getValueList(ArrayList<String> arraylist) {
+		return "--returned--arraylist--" + arraylist.toString();
+	}*/
+	
+	/**
+	 * Get value with list
+	 * 
+	 * @param list list of string
+	 * @return String return with appended list
+	 */
+	public String getValueList(ArrayList<String> list) {
+		return "--returned--list--" + list.toString();
 	}
 
 }	
