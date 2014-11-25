@@ -9,7 +9,7 @@ package com.hariram.annotation;
 public interface AnnotationProcessor {
 	
     // type of annotations
-	public enum AnnotationType {DBAnnotation, PropertyAnnotation};
+	public enum AnnotationType {DBAnnotation, PropertyAnnotation, Log4JAnnotation};
 	
 	/**
 	 * Processes the annotations for the particular object passed
