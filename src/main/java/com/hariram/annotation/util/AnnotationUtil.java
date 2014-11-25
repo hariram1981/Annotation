@@ -15,6 +15,7 @@ import java.util.TreeSet;
 import org.apache.log4j.Logger;
 
 import com.hariram.annotation.AnnotationException;
+import com.hariram.annotation.AnnotationProcessor;
 import com.hariram.annotation.AnnotationProcessor.AnnotationType;
 
 /**
@@ -102,5 +103,15 @@ public final class AnnotationUtil {
 				}
 			});
 		return methodArgsClassList;
+	}
+	
+	/**
+	 * Processes the annotation for the particular object.
+	 * 
+	 * @param processor annotation processor to process the annotation
+	 * @param annotationObj the object that has annotation
+	 */
+	public static void processAnnotation(AnnotationProcessor processor, Object annotationObj) {
+		processor.process(annotationObj);
 	}
 }
