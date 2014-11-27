@@ -22,6 +22,14 @@ Classes
  
 ###2. com.hariram.annotation.AnnotationException
  - Exception that extends RuntimeException and handles exceptions related to annotations
+ 
+Usage
+----------
+- Usage can be checked in the JUnit test case that has been written for it but below is a sample:
+
+		Object obj = AnnotationUtil.callMethod(new TestClass(), "getValueOneParam", new Object[]{new String("input")});
+
+- In above, callMethod is called passing an object of TestClass and in order to trigger the getValueOneParam method that has one input parameter as String (first parameter is the object of the class, second is the name of the method and third is an array of objects that are the parameters for the method).
 
 License
 ==========
