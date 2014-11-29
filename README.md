@@ -17,7 +17,7 @@ Classes
 ###1. com.hariram.annotation.util.AnnotationUtil
  - Utility class for annotation functionalities.
 
-####Object callMethod(Object obj, String methodName, Object[] methodArgs)
+####static Object callMethod(Object obj, String methodName, Object[] methodArgs)
  - Invokes the method of the particular object with provided arguments using reflection.
  
 ###2. com.hariram.annotation.AnnotationException
