@@ -12,6 +12,9 @@ Interfaces
 Object process(Object obj, String callbackMethodName, Object[] callbackMethodArgs)
  - processes the annotation in the particular object and after processing, calls the callbackmethod with the provided arguments (useful in order to not just process the annotation but call a method of the object after processing).
  
+void process(Object obj)
+ - processes the annotation in the particular object.
+ 
 Classes
 ----------
 ###1. com.hariram.annotation.util.AnnotationUtil
