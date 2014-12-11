@@ -10,3 +10,4 @@
 0.7 - Added generic method in AnnotationUtil to process annotation
 0.8 - Setting process(Object) method to be of return type void
 0.9 - Adding cache annotation type
+1.0 - First stable release
